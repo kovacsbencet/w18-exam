@@ -26,12 +26,11 @@ function App (){
 
   useEffect(()=>{
     setLoading(true)
-    fetchData()
+    setTimeout(() => {fetchData()}, 5000)
+    setTimeout(() => {setSubscription(true)}, 10000)
   }, [])
 
-  setTimeout(() => {
-    setSubscription(true)
-  }, 10000);
+
 
   return (
     <div className="App">
