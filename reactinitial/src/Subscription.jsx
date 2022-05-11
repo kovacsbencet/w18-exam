@@ -17,6 +17,7 @@ function Subscription() {
         fetch("https://demoapi.com/api/series/newsletter", requestOptions)
           .then(response => response.json())
           .then(res => console.log(res));
+          
     }
 
     return (
@@ -24,7 +25,7 @@ function Subscription() {
             <h2>Subscribe to our newsletter.</h2>
             {<form>
                 <input type="email" value={email} onChange={(({target}) => setEmail(target.value))}/>
-                <button onClick={handleSubmit}>Subscribe!</button>
+                <button disabled={(email.includes("@" && "."))? false : true} onClick={handleSubmit}>Subscribe!</button>
             </form>}
             <h3>{loading}</h3>
         </div>
